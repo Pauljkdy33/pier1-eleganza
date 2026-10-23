@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Placeholder editorial Pier 1 Eleganza">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0b"/>
+      <stop offset="45%" stop-color="#1c1c1f"/>
+      <stop offset="100%" stop-color="#0a0a0b"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c7c9cc" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#c7c9cc" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#c7c9cc" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <g opacity="0.5">
+    <rect x="480" y="120" width="1" height="840" fill="#4a4c50"/>
+    <rect x="960" y="60" width="1" height="960" fill="#4a4c50"/>
+    <rect x="1440" y="120" width="1" height="840" fill="#4a4c50"/>
+  </g>
+  <rect x="760" y="510" width="400" height="1" fill="url(#line)"/>
+  <text x="960" y="500" font-family="Georgia, 'Times New Roman', serif" font-size="46" fill="#e4e5e7" text-anchor="middle" letter-spacing="6">PIER 1 ELEGANZA</text>
+  <text x="960" y="560" font-family="Arial, sans-serif" font-size="18" fill="#9a9da3" text-anchor="middle" letter-spacing="4">REEMPLAZAR POR FOTOGRAFÍA EDITORIAL — 1920×1080</text>
+</svg>

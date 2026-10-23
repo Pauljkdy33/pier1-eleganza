@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" role="img" aria-label="Placeholder taller Pier 1 Eleganza">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1f"/>
+      <stop offset="100%" stop-color="#0a0a0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1125" fill="url(#bg2)"/>
+  <circle cx="450" cy="480" r="90" fill="none" stroke="#c7c9cc" stroke-width="1" opacity="0.6"/>
+  <rect x="405" y="435" width="90" height="90" fill="none" stroke="#c7c9cc" stroke-width="1" opacity="0.35" transform="rotate(45 450 480)"/>
+  <text x="450" y="640" font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="#e4e5e7" text-anchor="middle" letter-spacing="3">EL TALLER</text>
+  <text x="450" y="675" font-family="Arial, sans-serif" font-size="14" fill="#9a9da3" text-anchor="middle" letter-spacing="2">REEMPLAZAR — 900×1125</text>
+</svg>
