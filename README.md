@@ -30,43 +30,35 @@ Si reemplazás `logo-original.png` por un archivo nuevo, necesitás regenerar `l
 
 ## Cómo reemplazar imágenes
 
-Las imágenes de fondo/producto son placeholders en SVG (funcionan sin depender de servicios externos). Reemplázalas por fotografías reales manteniendo los mismos nombres de archivo, o actualiza la ruta `src` en el HTML:
+Las fotos del sitio están en `assets/img/`. Las que dicen "placeholder" o `.svg` son marcadores: reemplázalas por fotos reales (`.jpg` optimizado, menos de 300 KB) y, si cambia la extensión, actualiza la ruta `src` en el HTML.
 
 | Archivo actual | Usado en | Tamaño recomendado |
 |---|---|---|
-| `assets/img/hero-placeholder.svg` | Hero de `index.html` | 1920×1080 (horizontal) |
-| `assets/img/feature-placeholder.svg` | Banner "Pieza destacada" de `index.html` | 1920×1080 (horizontal) |
-| `assets/img/about-placeholder.svg` | `nosotros.html` (foto del taller/fundador) | 900×1125 (vertical, 4:5) |
-| `assets/img/categoria-trajes.svg` | Galería de categorías en `colecciones.html` | 1600×800 (horizontal) |
-| `assets/img/categoria-camisas.svg` | Galería de categorías en `colecciones.html` | 1600×800 (horizontal) |
-| `assets/img/categoria-corbatas.svg` | Galería de categorías en `colecciones.html` | 1600×800 (horizontal) |
-| `assets/img/categoria-accesorios.svg` | Galería de categorías en `colecciones.html` | 1600×800 (horizontal) |
-| `assets/img/og-image.svg` | Meta tag Open Graph (miniatura al compartir el link) | 1200×630 |
-
-Formatos recomendados para las fotos reales: `.jpg` o `.webp` optimizados (menos de 300 KB c/u) para no afectar el tiempo de carga.
+| `hero-fondo1.jpg` | Fondo del inicio (`index.html`) | 1600×900 (horizontal) |
+| `feature-traje.jpg` | Banner "Trajes a medida" de `index.html` | 1600×900 (horizontal) |
+| `promo-camisas.jpg` | Promoción del 20 % en `index.html` | 1200×1200 (cuadrada) |
+| `about-placeholder.svg` | `nosotros.html` (foto del taller o del equipo) | 900×1125 (vertical, 4:5) |
+| `categoria-trajes.svg` | Colecciones: trajes para caballeros | 1600×800 (horizontal) |
+| `categoria-camisas.svg` | Colecciones: camisas para caballeros | 1600×800 (horizontal) |
+| `categoria-trajes-damas.svg` | Colecciones: trajes para damas | 1600×800 (horizontal) |
+| `categoria-camisas-damas.svg` | Colecciones: camisas para damas | 1600×800 (horizontal) |
+| `og-image.jpg` | Miniatura al compartir el link en redes | 1200×630 |
 
 ## Cómo reemplazar textos
 
 Todo el copy está directamente en cada archivo `.html`, buscá estos puntos:
 
-- **Nombre y datos de contacto**: en el `<footer>` de cada página y en `contacto.html` (dirección, teléfono, email, horario).
-- **WhatsApp**: buscá `wa.me/10000000000` en los 4 archivos HTML (aparece en el botón flotante, el footer y la sección de contacto) y reemplazá `10000000000` por el número real en formato internacional sin signos ni espacios (ej. `5491122334455`).
-- **Historia de marca**: los párrafos marcados con `[Texto editable: ...]` en `nosotros.html`.
-- **Pieza destacada** (`index.html`): el bloque "Línea Executive" — título, copy y botón — es un ejemplo de producto/colección destacada, reemplazalo por la pieza real que quieras promocionar.
-- **Nuestro proceso** (`index.html`): los 6 pasos numerados son un flujo genérico de sastrería a medida; ajustá textos y cantidad de pasos según tu proceso real.
-- **Galería de categorías** (`colecciones.html`): los bloques Trajes/Camisas/Corbatas/Accesorios — agregá, quitá o renombrá categorías copiando/eliminando un `<article class="category-block">`.
-- **Meta tags SEO**: en el `<head>` de cada página, actualizá `title`, `description`, `og:title`, `og:description` y las URLs `canonical` / `og:url` (reemplazá `tu-usuario` por tu usuario real de GitHub).
-- **Mapa**: en `contacto.html`, el `<iframe>` usa OpenStreetMap con coordenadas de ejemplo. Reemplazá el `src` por la ubicación real (podés generar el embed en [openstreetmap.org/export](https://www.openstreetmap.org/export) o usar Google Maps si preferís).
+- **Datos de contacto**: en el `<footer>` de cada página y en `contacto.html` (dirección, teléfonos, correo).
+- **WhatsApp**: el número `593987252354` aparece en los 4 HTML (botón flotante, footer, contacto y promo) y en `assets/js/main.js` (formulario). Para cambiarlo, busca y reemplaza en esos archivos.
+- **Promoción** (`index.html`): sección "Promoción". Cuando termine la oferta, elimina esa sección o cambia el texto.
+- **Nuestro proceso** (`index.html`): los 6 pasos son un flujo genérico; ajústalos a tu proceso real.
+- **Galería de categorías** (`colecciones.html`): agrega, quita o renombra categorías copiando o eliminando un `<article class="category-block">`.
+- **Meta tags SEO**: en el `<head>` de cada página (`title`, `description`, `og:*`). Las direcciones `canonical` y `og:url` apuntan a `https://pauljkdy33.github.io/pier1-eleganza/`; si cambias de dominio, actualízalas.
+- **Mapa**: en `contacto.html`, el `<iframe>` de Google Maps busca la dirección por texto. Para un pin exacto, usa en Google Maps *Compartir → Insertar un mapa* y pega el nuevo `src`.
 
 ## Formulario de contacto
 
-El formulario en `contacto.html` es **solo de demostración**: al enviarlo, JavaScript muestra un mensaje de confirmación en pantalla pero no envía datos a ningún servidor (el sitio no tiene backend). Para recibir mensajes reales sin programar un backend, conectá el `<form>` a un servicio gratuito como:
-
-- [Formspree](https://formspree.io/)
-- [Getform](https://getform.io/)
-- [Netlify Forms](https://www.netlify.com/products/forms/) (si además hospedás el sitio en Netlify)
-
-Normalmente esto implica agregar el `action` y `method` del servicio al tag `<form id="contact-form">` en `assets/js/main.js`/`contacto.html` según las instrucciones del proveedor elegido.
+El formulario de `contacto.html` no usa servidor: al enviarlo, arma el mensaje con el nombre, el texto y el correo (si lo escribieron) y abre WhatsApp con ese mensaje listo para enviar al número de la marca. La lógica está en `assets/js/main.js`.
 
 ## Cómo publicar en GitHub Pages
 

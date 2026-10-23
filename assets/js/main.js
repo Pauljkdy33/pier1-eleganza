@@ -65,7 +65,8 @@
     });
   }
 
-  /* Formulario de contacto: validación simple + mensaje de éxito (sin backend) */
+  /* Formulario de contacto: arma el mensaje y lo envía por WhatsApp (sin backend) */
+  var WHATSAPP_NUMBER = '593987252354';
   var contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function (event) {
@@ -73,11 +74,18 @@
 
       var successBox = document.getElementById('form-success');
       var nameField = contactForm.querySelector('#name');
+      var emailField = contactForm.querySelector('#email');
       var messageField = contactForm.querySelector('#message');
 
       if (!nameField.value.trim() || !messageField.value.trim()) {
         return;
       }
+
+      var text = 'Hola, soy ' + nameField.value.trim() + '. ' + messageField.value.trim();
+      if (emailField && emailField.value.trim()) {
+        text += ' (Mi correo: ' + emailField.value.trim() + ')';
+      }
+      window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
 
       contactForm.reset();
       if (successBox) {
