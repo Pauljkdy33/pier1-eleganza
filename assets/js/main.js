@@ -18,18 +18,28 @@
   var navLinks = document.querySelector('.nav-links');
 
   if (navToggle && navLinks) {
-    navToggle.addEventListener('click', function () {
-      var isOpen = navLinks.classList.toggle('is-open');
+    var setMenu = function (isOpen) {
+      navLinks.classList.toggle('is-open', isOpen);
       navToggle.classList.toggle('is-open', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    };
+
+    navToggle.addEventListener('click', function () {
+      setMenu(!navLinks.classList.contains('is-open'));
     });
 
     navLinks.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        navLinks.classList.remove('is-open');
-        navToggle.classList.remove('is-open');
-        navToggle.setAttribute('aria-expanded', 'false');
+        setMenu(false);
       });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && navLinks.classList.contains('is-open')) {
+        setMenu(false);
+        navToggle.focus();
+      }
     });
   }
 
@@ -39,6 +49,7 @@
     var href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
   });
 
@@ -73,13 +84,23 @@
       event.preventDefault();
 
       var successBox = document.getElementById('form-success');
+      var errorBox = document.getElementById('form-error');
       var nameField = contactForm.querySelector('#name');
       var emailField = contactForm.querySelector('#email');
       var messageField = contactForm.querySelector('#message');
 
-      if (!nameField.value.trim() || !messageField.value.trim()) {
+      var nameMissing = !nameField.value.trim();
+      var messageMissing = !messageField.value.trim();
+      nameField.setAttribute('aria-invalid', String(nameMissing));
+      messageField.setAttribute('aria-invalid', String(messageMissing));
+
+      if (nameMissing || messageMissing) {
+        if (successBox) successBox.classList.remove('is-visible');
+        if (errorBox) errorBox.hidden = false;
+        (nameMissing ? nameField : messageField).focus();
         return;
       }
+      if (errorBox) errorBox.hidden = true;
 
       var text = 'Hola, soy ' + nameField.value.trim() + '. ' + messageField.value.trim();
       if (emailField && emailField.value.trim()) {
@@ -90,7 +111,6 @@
       contactForm.reset();
       if (successBox) {
         successBox.classList.add('is-visible');
-        successBox.setAttribute('role', 'status');
       }
     });
   }

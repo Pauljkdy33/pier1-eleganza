@@ -908,7 +908,7 @@ h1, h2, h3, h4 {
   margin-bottom: var(--space-sm);
 }
 
-.footer-col h4 {
+.footer-col h3 {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   letter-spacing: 0.15em;
@@ -994,5 +994,96 @@ h1, h2, h3, h4 {
 
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* ---------- Accesibilidad y detalles de interaccion ---------- */
+html {
+  scroll-padding-top: calc(var(--header-height) + 1rem);
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+a, button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(63, 92, 58, 0.15);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 300;
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 0.7rem 1.2rem;
+  font-size: 0.85rem;
+  transition: top var(--transition);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.hero a:focus-visible,
+.cta-band a:focus-visible,
+.feature-banner a:focus-visible,
+.nav-toggle.is-open:focus-visible,
+.nav-links a:focus-visible {
+  outline-color: var(--color-accent-strong);
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: #9b2c2c;
+}
+
+.form-error {
+  color: #9b2c2c;
+  font-size: 0.9rem;
+}
+
+.contact-info h2 {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    visibility: hidden;
+    transition: transform var(--transition), visibility 0s linear 0.35s;
+  }
+
+  .nav-links.is-open {
+    visibility: visible;
+    transition-delay: 0s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    animation-duration: 0.01ms !important;
   }
 }
