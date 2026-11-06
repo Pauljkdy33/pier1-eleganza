@@ -57,13 +57,13 @@ Reglas:
 ## 6. Componentes
 
 - **Botón principal:** fondo negro, texto blanco; en hover se vuelve transparente con texto negro. Sobre fondos oscuros: fondo blanco con texto negro.
-- **Botón secundario:** transparente con borde fino.
+- **Botón secundario:** transparente con borde fino. Sobre fondos oscuros, en hover se rellena de blanco con texto negro (nunca texto verde sobre foto).
 - **Tarjeta de servicio:** fondo `--color-bg-alt`; en hover sube 6 px, fondo blanco, borde verde.
 - **Proceso:** lista numerada (01–06) con número verde en serif.
 - **Categorías:** foto grande 16:8 con título y descripción centrados debajo.
 - **Promoción:** imagen cuadrada a la izquierda y texto con botón de WhatsApp a la derecha.
 - **Formulario:** envía por WhatsApp; muestra errores visibles y mueve el foco al primer campo vacío.
-- **Movimiento:** aparición suave al hacer scroll (`.reveal`), transiciones de 0.35 s, y se desactiva con "reducir movimiento".
+- **Movimiento:** sutil y corto. Los bloques aparecen con 16 px de desplazamiento y 0.7 s, de forma escalonada (100 ms entre elementos); las fotos no se deslizan, se asientan desde un zoom de 105 %. El hero tiene parallax leve y su texto se desvanece al bajar. Barra de progreso verde arriba. Solo se animan opacidad y posición. Todo se desactiva con "reducir movimiento" y el contenido se ve aunque falle el JavaScript (clase `.js`).
 
 ## 7. Logo
 

@@ -53,16 +53,27 @@
     }
   });
 
-  /* Animación fade-in al hacer scroll (IntersectionObserver) */
+  /* Animación al hacer scroll: aparición escalonada y limpieza al terminar */
   var revealEls = document.querySelectorAll('.reveal');
+  var finishReveal = function (el, delay) {
+    window.setTimeout(function () {
+      el.classList.remove('reveal', 'is-visible');
+      el.style.transitionDelay = '';
+    }, delay + 1700);
+  };
+
   if ('IntersectionObserver' in window && revealEls.length) {
     var observer = new IntersectionObserver(
       function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
+        var visibles = entries.filter(function (entry) {
+          return entry.isIntersecting;
+        });
+        visibles.forEach(function (entry, index) {
+          var delay = Math.min(index * 100, 400);
+          entry.target.style.transitionDelay = delay + 'ms';
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+          finishReveal(entry.target, delay);
         });
       },
       { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
@@ -75,6 +86,48 @@
       el.classList.add('is-visible');
     });
   }
+
+  /* Hero con parallax suave y barra de progreso de lectura */
+  var hero = document.querySelector('.hero');
+  var heroMedia = document.querySelector('.hero-media');
+  var heroContent = document.querySelector('.hero-content');
+  var progressBar = document.querySelector('.scroll-progress');
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ticking = false;
+
+  function updateScrollEffects() {
+    ticking = false;
+    var y = window.scrollY;
+
+    if (progressBar) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (max > 0 ? Math.min(y / max, 1) : 0) + ')';
+    }
+
+    if (hero) {
+      hero.classList.toggle('is-away', y > 40);
+      if (!reduceMotion && y < hero.offsetHeight) {
+        if (heroMedia) {
+          heroMedia.style.transform = 'translate3d(0,' + (y * 0.2).toFixed(1) + 'px,0)';
+        }
+        if (heroContent) {
+          heroContent.style.opacity = Math.max(0, 1 - y / (hero.offsetHeight * 0.6)).toFixed(2);
+          heroContent.style.transform = 'translate3d(0,' + (y * 0.08).toFixed(1) + 'px,0)';
+        }
+      }
+    }
+  }
+
+  function requestScrollUpdate() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(updateScrollEffects);
+    }
+  }
+
+  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+  window.addEventListener('resize', requestScrollUpdate);
+  updateScrollEffects();
 
   /* Formulario de contacto: arma el mensaje y lo envía por WhatsApp (sin backend) */
   var WHATSAPP_NUMBER = '593987252354';
