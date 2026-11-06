@@ -1062,3 +1062,14 @@ button:focus-visible,
     animation-duration: 0.01ms !important;
   }
 }
+.contact-info a.btn {
+  color: var(--color-black);
+  border-color: var(--color-black);
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  padding: 0.7rem 1.6rem;
+}
+
+.contact-info a.btn:hover {
+  color: var(--color-accent);
+}

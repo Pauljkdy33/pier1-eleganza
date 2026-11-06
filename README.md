@@ -23,10 +23,10 @@ El logo real de la marca vive en `assets/img/logo-original.png` (versión a colo
 
 | Archivo | Uso | Motivo |
 |---|---|---|
-| `assets/img/logo-onlight.png` | Header y footer de las 4 páginas | El wordmark original está pensado para fondo oscuro; esta versión recolorea el texto "Pier 1 Eleganza / Arte y Diseño" en tinta oscura para que se lea sobre el header blanco, conservando el emblema (rombo + caballo + "PE") en sus colores originales. |
-| `assets/img/logo-icon-original.png` | Favicon (ícono de pestaña) en las 4 páginas | Recorte cuadrado solo del emblema, a color original. |
+| `assets/img/logo-onlight.webp` | Header y footer de las 4 páginas | El wordmark original está pensado para fondo oscuro; esta versión recolorea el texto "Pier 1 Eleganza / Arte y Diseño" en tinta oscura para que se lea sobre el header blanco, conservando el emblema (rombo + caballo + "PE") en sus colores originales. |
+| `assets/img/favicon-128.png` y `apple-touch-icon.png` | Favicon (ícono de pestaña) y ícono para iPhone | Se generan a partir de `logo-icon-original.png` (recorte del emblema a color original). |
 
-Si reemplazás `logo-original.png` por un archivo nuevo, necesitás regenerar `logo-onlight.png` y `logo-icon-original.png` a mano (con cualquier editor de imágenes) o pedir que se regeneren con el mismo criterio (recolorear el texto a un tono oscuro y recortar el emblema para el favicon).
+Si reemplazás `logo-original.png` por un archivo nuevo, necesitás regenerar `logo-onlight.webp` (480 px de ancho) y los íconos a mano (con cualquier editor de imágenes) o pedir que se regeneren con el mismo criterio (recolorear el texto a un tono oscuro y recortar el emblema para el favicon).
 
 ## Cómo reemplazar imágenes
 
@@ -34,9 +34,9 @@ Las fotos del sitio están en `assets/img/`. Las que dicen "placeholder" o `.svg
 
 | Archivo actual | Usado en | Tamaño recomendado |
 |---|---|---|
-| `hero-fondo1.jpg` | Fondo del inicio (`index.html`) | 1600×900 (horizontal) |
-| `feature-traje.jpg` | Banner "Trajes a medida" de `index.html` | 1600×900 (horizontal) |
-| `promo-camisas.jpg` | Promoción del 20 % en `index.html` | 1200×1200 (cuadrada) |
+| `hero-estudio.webp` | Fondo del inicio (`index.html`) | 1600×900 (horizontal) |
+| `feature-traje.webp` | Bloque "Trajes a medida" de `index.html` | 1600×900 (horizontal) |
+| `promo-camisas.webp` | Promoción del 20 % en `index.html` | 1200×1200 (cuadrada) |
 | `about-placeholder.svg` | `nosotros.html` (foto del taller o del equipo) | 900×1125 (vertical, 4:5) |
 | `categoria-trajes.svg` | Colecciones: trajes para caballeros | 1600×800 (horizontal) |
 | `categoria-camisas.svg` | Colecciones: camisas para caballeros | 1600×800 (horizontal) |

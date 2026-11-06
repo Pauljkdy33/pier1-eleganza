@@ -67,7 +67,7 @@ Reglas:
 
 ## 7. Logo
 
-- `logo-onlight.png`: sobre fondo claro (encabezado y pie). El texto va en negro y el emblema conserva sus colores.
+- `logo-onlight.webp`: sobre fondo claro (encabezado y pie). El texto va en negro y el emblema conserva sus colores.
 - `logo-original.png`: sobre fondo oscuro (texto blanco).
 - `logo-icon-original.png`: solo el emblema, para el favicon.
 - Alto en el encabezado: 62 px; en el pie: 58 px. No deformar ni recolorear el emblema.
@@ -76,7 +76,7 @@ Reglas:
 
 - Fotos oscuras y elegantes, sin texto, sin logos ni marcas de otras empresas.
 - Tamaños: inicio 1600×900; categorías 1600×800; promo 1200×1200; Sobre Nosotros 900×1125; compartir en redes 1200×630.
-- Siempre `alt` descriptivo y `width`/`height`. Las que están bajo el pliegue llevan `loading="lazy"`.
+- Formato WebP para fotos y logo (JPG solo para la imagen de compartir en redes). Siempre `alt` descriptivo y `width`/`height`. Las que están bajo el pliegue llevan `loading="lazy"`.
 
 ## 9. Voz y contenido
 
