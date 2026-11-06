@@ -34,7 +34,7 @@ Las fotos del sitio están en `assets/img/`. Las que dicen "placeholder" o `.svg
 
 | Archivo actual | Usado en | Tamaño recomendado |
 |---|---|---|
-| `hero-estudio.webp` | Fondo del inicio (`index.html`) | 1600×900 (horizontal) |
+| `hero-fondo1.webp` | Fondo del inicio (foto del showroom con tratamiento oscuro por CSS) (`index.html`) | 1600×900 (horizontal) |
 | `feature-traje.webp` | Bloque "Trajes a medida" de `index.html` | 1600×900 (horizontal) |
 | `promo-camisas.webp` | Promoción del 20 % en `index.html` | 1200×1200 (cuadrada) |
 | `about-placeholder.svg` | `nosotros.html` (foto del taller o del equipo) | 900×1125 (vertical, 4:5) |
