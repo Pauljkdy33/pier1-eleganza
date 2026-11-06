@@ -1,12 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" role="img" aria-label="Placeholder categoría Camisas para damas">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" role="img" aria-label="Camisas para damas">
   <defs>
-    <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1c1c1f"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d3a22"/>
       <stop offset="100%" stop-color="#121214"/>
     </linearGradient>
   </defs>
-  <rect width="1600" height="800" fill="url(#g6)"/>
-  <path d="M735 285 L775 262 L800 300 L825 262 L865 285 L845 335 L835 560 L765 560 L755 335 Z" fill="none" stroke="#8a9c3f" stroke-width="1.5" opacity="0.55"/>
-  <text x="800" y="420" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#f0efe9" text-anchor="middle" letter-spacing="4">CAMISAS PARA DAMAS</text>
-  <text x="800" y="455" font-family="Arial, sans-serif" font-size="13" fill="#9a9c93" text-anchor="middle" letter-spacing="3">REEMPLAZAR — 1600×800</text>
+  <rect width="1600" height="800" fill="url(#bg)"/>
+  <rect x="40" y="40" width="1520" height="720" fill="none" stroke="#8a9c3f" stroke-opacity="0.3"/>
+  <g stroke="#8a9c3f" fill="none" stroke-width="1.5">
+    <path d="M660 330h200M940 330h200"/>
+    <path d="M900 316l14 14-14 14-14-14z"/>
+  </g>
+  <text x="800" y="420" font-family="Georgia, 'Times New Roman', serif" font-size="54" fill="#f0efe9" text-anchor="middle" letter-spacing="10">CAMISAS</text>
+  <text x="800" y="470" font-family="Arial, sans-serif" font-size="18" fill="#c4cdb3" text-anchor="middle" letter-spacing="7">PARA DAMAS</text>
 </svg>

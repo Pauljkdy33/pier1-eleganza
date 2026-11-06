@@ -12,12 +12,13 @@ Estilo: editorial, limpio y sobrio. Fondo blanco, texto casi negro, un acento ve
 
 | Token | Valor | Uso |
 |---|---|---|
-| `--color-black` | `#121214` | Texto principal, botón principal, secciones oscuras (hero, banner, CTA, menú móvil) |
+| `--color-black` | `#121214` | Texto principal, botón principal, secciones oscuras (hero, menú móvil) |
 | `--color-black-soft` | `#1c1c1f` | Variante oscura de apoyo |
 | `--color-charcoal` | `#26262a` | Variante oscura de apoyo |
 | `--color-white` | `#ffffff` | Fondo de la página y del encabezado; texto sobre secciones oscuras |
 | `--color-bg-alt` | `#f3f2ee` | Fondo de tarjetas, "Nuestro proceso" y cabeceras de páginas internas |
-| `--color-text-muted` | `#6b6c6f` | Texto secundario |
+| `--color-text-muted` | `#55565a` | Texto secundario |
+| `--color-green-deep` | `#1d3a22` | Verde oscuro del logo: franja final "Su próximo traje…" |
 | `--color-border` | `rgba(18,18,20,.12)` | Bordes y divisores |
 | `--color-accent` | `#3f5c3a` | Verde profundo del logo: etiquetas, números, iconos, enlaces activos y WhatsApp sobre fondo claro |
 | `--color-accent-strong` | `#8a9c3f` | Verde-lima del logo: **solo sobre fondo oscuro** (etiquetas del hero) o como fondo de hover |
@@ -30,7 +31,8 @@ Reglas:
 ## 3. Tipografía
 
 - **Títulos:** Playfair Display (serif), peso 600, interlineado 1.15, `text-wrap: balance`.
-- **Texto:** Inter (sans-serif), peso 300, interlineado 1.6.
+- **Texto:** Inter (sans-serif), peso 400, interlineado 1.6.
+- **Acento cursivo:** Great Vibes (clase `.script`), solo para el lema del inicio ("te define"), como en los afiches. No usarla en párrafos.
 - **Etiquetas (`.eyebrow`):** 0.75rem, mayúsculas, espaciado 0.25em, color acento.
 - **Botones y navegación:** mayúsculas con espaciado de 0.15em.
 
@@ -61,6 +63,9 @@ Reglas:
 - **Tarjeta de servicio:** fondo `--color-bg-alt`; en hover sube 6 px, fondo blanco, borde verde.
 - **Proceso:** lista numerada (01–06) con número verde en serif.
 - **Categorías:** foto grande 16:8 con título y descripción centrados debajo.
+- **Divisor de marca:** línea fina, rombo y línea (verde sobre fondo claro, verde-lima sobre fondo oscuro) bajo los títulos de sección, como en los afiches.
+- **Íconos de línea:** trazo verde de 1.4 px (camisa, siluetas damas y caballeros, tijeras, sello de calidad) en tarjetas y franja de valores.
+- **Mosaicos de categoría:** mientras no haya fotos, fondo negro o verde alternados con el nombre y el divisor.
 - **Promoción:** imagen cuadrada a la izquierda y texto con botón de WhatsApp a la derecha.
 - **Formulario:** envía por WhatsApp; muestra errores visibles y mueve el foco al primer campo vacío.
 - **Movimiento:** sutil y corto. Los bloques aparecen con 16 px de desplazamiento y 0.7 s, de forma escalonada (100 ms entre elementos); las fotos no se deslizan, se asientan desde un zoom de 105 %. El hero tiene parallax leve y su texto se desvanece al bajar. Barra de progreso verde arriba. Solo se animan opacidad y posición. Todo se desactiva con "reducir movimiento" y el contenido se ve aunque falle el JavaScript (clase `.js`).
@@ -70,7 +75,7 @@ Reglas:
 - `logo-onlight.webp`: sobre fondo claro (encabezado y pie). El texto va en negro y el emblema conserva sus colores.
 - `logo-original.png`: sobre fondo oscuro (texto blanco).
 - `logo-icon-original.png`: solo el emblema, para el favicon.
-- Alto en el encabezado: 62 px; en el pie: 58 px. No deformar ni recolorear el emblema.
+- Alto en el encabezado: 62 px en computadora y 46 px en celular; en el pie: 58 px. No deformar ni recolorear el emblema.
 
 ## 8. Imágenes
 

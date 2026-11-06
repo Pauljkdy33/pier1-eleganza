@@ -1,13 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" role="img" aria-label="Placeholder taller Pier 1 Eleganza">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" role="img" aria-label="Pier 1 Eleganza, arte y diseño">
   <defs>
-    <linearGradient id="bg2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1c1c1f"/>
-      <stop offset="100%" stop-color="#0a0a0b"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1d3a22"/>
+      <stop offset="100%" stop-color="#121214"/>
     </linearGradient>
   </defs>
-  <rect width="900" height="1125" fill="url(#bg2)"/>
-  <circle cx="450" cy="480" r="90" fill="none" stroke="#c7c9cc" stroke-width="1" opacity="0.6"/>
-  <rect x="405" y="435" width="90" height="90" fill="none" stroke="#c7c9cc" stroke-width="1" opacity="0.35" transform="rotate(45 450 480)"/>
-  <text x="450" y="640" font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="#e4e5e7" text-anchor="middle" letter-spacing="3">EL TALLER</text>
-  <text x="450" y="675" font-family="Arial, sans-serif" font-size="14" fill="#9a9da3" text-anchor="middle" letter-spacing="2">REEMPLAZAR — 900×1125</text>
+  <rect width="900" height="1125" fill="url(#bg)"/>
+  <rect x="34" y="34" width="832" height="1057" fill="none" stroke="#8a9c3f" stroke-opacity="0.3"/>
+  <g stroke="#8a9c3f" fill="none" stroke-width="1.5">
+    <path d="M250 520h150M500 520h150"/>
+    <path d="M450 504l16 16-16 16-16-16z"/>
+  </g>
+  <text x="450" y="620" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#f0efe9" text-anchor="middle" letter-spacing="9">ARTE Y DISEÑO</text>
+  <text x="450" y="668" font-family="Arial, sans-serif" font-size="16" fill="#c4cdb3" text-anchor="middle" letter-spacing="7">PIER 1 ELEGANZA</text>
 </svg>
